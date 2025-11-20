@@ -136,3 +136,83 @@ body {
     border: 2px solid;
     border-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%) 1;
 }
+
+/* Стили для дневника */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-primary);
+    opacity: 0.3;
+}
+
+.timeline-item {
+    position: relative;
+}
+
+.timeline-badge {
+    position: absolute;
+    left: -38px;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.8rem;
+}
+
+.timeline-content {
+    background: var(--color-white);
+    padding: 20px;
+    border-radius: var(--radius);
+    border-left: 4px solid var(--color-primary);
+}
+
+.achievement-icon {
+    flex-shrink: 0;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease;
+}
+
+/* Адаптивность для дневника */
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 20px;
+    }
+    
+    .timeline::before {
+        left: 10px;
+    }
+    
+    .timeline-badge {
+        left: -28px;
+        width: 20px;
+        height: 20px;
+        font-size: 0.6rem;
+    }
+}
